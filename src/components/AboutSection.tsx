@@ -29,7 +29,7 @@ const AboutSection = () => {
           
           {/* Left: About Me Cube */}
           <div className="relative">
-            <div className="card-tech p-8 transform hover:rotate-1 transition-transform duration-300">
+            <div className="card-tech p-8">
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-primary">About Me</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
