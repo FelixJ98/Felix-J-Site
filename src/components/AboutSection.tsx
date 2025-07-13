@@ -1,5 +1,4 @@
 import { Github, Linkedin, Trophy } from "lucide-react";
-import profilePicture from "@/assets/profile-picture.jpg";
 
 const AboutSection = () => {
   const socialLinks = [
@@ -26,27 +25,8 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-3 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           
-          {/* Profile Picture */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <div className="card-tech p-6">
-                <div className="relative w-64 h-64 mx-auto">
-                  <img 
-                    src={profilePicture} 
-                    alt="Profile picture" 
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent rounded-2xl"></div>
-                </div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary/30 rounded-full blur-lg"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-secondary/30 rounded-full blur-md"></div>
-            </div>
-          </div>
-
           {/* Left: About Me Cube */}
           <div className="relative">
             <div className="card-tech p-8">
