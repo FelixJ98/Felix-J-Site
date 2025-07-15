@@ -23,12 +23,49 @@ const AboutSection = () => {
   ];
 
   return (
-      <section id="about" className="py-20 px-4">
+      <section id="about" className="py-20 px-4 mb-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col items-center space-y-12">
 
-            {/* Left: About Me Cube */}
-            <div className="relative">
+            {/* Profile Picture */}
+            <div className="card-tech p-4 w-64 h-64 flex items-center justify-center">
+              {/* Profile Image - replace with your actual image */}
+              { <img
+              src="/src/assets/linkedinprofile.jpg"
+              alt="Felix Jarquin"
+              className="w-full h-full object-cover rounded-lg"
+            /> }
+            </div>
+
+            {/* Social Links - Horizontal */}
+            <div className="flex gap-6">
+              {socialLinks.map((social) => (
+                  <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="card-tech p-4 w-56 block group hover:scale-105 transition-all duration-300"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-primary/20 p-2 rounded-lg group-hover:bg-primary/30 transition-colors">
+                        <social.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm">
+                          {social.name}
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          {social.description}
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+              ))}
+            </div>
+
+            {/* About Me */}
+            <div className="relative w-full max-w-4xl">
               <div className="card-tech p-8">
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-primary">About Me</h2>
@@ -59,57 +96,6 @@ const AboutSection = () => {
                       ))}
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Profile and Social Links */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-center lg:text-left">
-                Connect With Me
-              </h2>
-
-              {/* Profile Square and Social Links Side by Side */}
-              <div className="flex items-center gap-6">
-                <div className="card-tech p-4 w-56 h-56 flex items-center justify-center">
-                  {/* Profile Image - replace with your actual image */}
-                  {/* <img
-                  src="/src/assets/your-profile-image.jpg"
-                  alt="Felix Jarquin"
-                  className="w-full h-full object-cover rounded-lg"
-                /> */}
-
-                  {/* Placeholder - remove this when you add your image */}
-                  <div className="w-full h-full bg-primary/20 rounded-lg flex items-center justify-center">
-                    <User className="h-16 w-16 text-primary" />
-                  </div>
-                </div>
-
-                {/* Social Links - Larger and to the right */}
-                <div className="space-y-4">
-                  {socialLinks.map((social) => (
-                      <a
-                          key={social.name}
-                          href={social.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="card-tech p-4 w-56 block group hover:scale-105 transition-all duration-300"
-                      >
-                        <div className="flex items-center space-x-3">
-                          <div className="bg-primary/20 p-2 rounded-lg group-hover:bg-primary/30 transition-colors">
-                            <social.icon className="h-5 w-5 text-primary" />
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm">
-                              {social.name}
-                            </h3>
-                            <p className="text-xs text-muted-foreground">
-                              {social.description}
-                            </p>
-                          </div>
-                        </div>
-                      </a>
-                  ))}
                 </div>
               </div>
             </div>
