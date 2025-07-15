@@ -47,7 +47,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-3 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left: About Me Cube */}
           <div className="relative">
@@ -85,8 +85,8 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Center: Profile Picture with Sliding Rectangles */}
-          <div className="relative h-80 lg:h-96">
+          {/* Right: Profile Picture Square with Sliding Rectangles */}
+          <div className="relative aspect-square max-w-96 mx-auto">
             {/* Background sliding rectangles */}
             <div className="absolute inset-0 overflow-hidden rounded-lg">
               {/* Top sliding rectangle */}
@@ -110,60 +110,47 @@ const AboutSection = () => {
 
             {/* Profile content that reveals */}
             <div 
-              className="relative z-10 h-full flex items-center justify-center transition-all duration-1000 ease-out"
+              className="relative z-10 h-full flex flex-col items-center justify-center transition-all duration-1000 ease-out"
               style={{
                 opacity: slideProgress,
                 transform: `scale(${0.8 + (slideProgress * 0.2)})`
               }}
             >
-              <div className="card-tech p-8 text-center space-y-4">
+              <div className="card-tech p-8 text-center space-y-6 w-full h-full flex flex-col justify-center">
                 {/* Profile placeholder - you can replace with actual image */}
                 <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-4xl font-bold text-primary-foreground">
                   CS
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Computer Science Student</h3>
-                <p className="text-muted-foreground text-sm">
-                  XR Developer & Tech Enthusiast
-                </p>
+                
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold text-foreground">Computer Science Student</h3>
+                  <p className="text-muted-foreground text-sm">
+                    XR Developer & Tech Enthusiast
+                  </p>
+                </div>
+                
                 <div className="flex justify-center space-x-2">
                   <span className="tech-badge text-xs">Unity</span>
                   <span className="tech-badge text-xs">React</span>
                   <span className="tech-badge text-xs">XR</span>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Right: Social Links */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-center lg:text-left">
-              Connect With Me
-            </h2>
-            
-            <div className="space-y-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-tech p-6 block group hover:scale-105 transition-all duration-300"
-                >
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-lg group-hover:bg-primary/30 transition-colors">
-                      <social.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {social.name}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {social.description}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              ))}
+                {/* Social Links as Icon Buttons */}
+                <div className="flex justify-center space-x-4 pt-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-primary/20 hover:bg-primary/30 p-3 rounded-lg transition-all duration-300 hover:scale-110 group"
+                      title={social.description}
+                    >
+                      <social.icon className="h-5 w-5 text-primary group-hover:text-primary" />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
