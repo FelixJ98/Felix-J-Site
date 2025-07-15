@@ -6,7 +6,7 @@ const HeroSection = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
     link.href = '/resume.pdf';
-    link.download = 'Felix_Jarquin_Resume.pdf'; // This will be the downloaded filename
+    link.download = 'Felix_Jarquin_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -34,11 +34,11 @@ const HeroSection = () => {
     >
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
-      
       <div className="relative z-10 text-center space-y-8 px-4">
         {/* Name */}
         <div className="space-y-4">
-          <h1 className="text-6xl md:text-8xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-lg"
+          <h1 className="text-6xl md:text-8xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent
+           drop-shadow-lg"
               style={{fontFamily: "'Space Mono', monospace", fontWeight: 400, letterSpacing: '-0.065em'}}>
               Felix Jarquin
           </h1>
@@ -51,10 +51,11 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
           <Button 
             onClick={handleResumeDownload}
-            className="btn-hero group"
+            variant="outline"
+            className="btn-hero-secondary group"
             size="lg"
           >
-            <Download className="mr-2 h-5 w-5" />
+            <Download className="mr-2 h-5 w-5 " />
             Download Resume
           </Button>
           

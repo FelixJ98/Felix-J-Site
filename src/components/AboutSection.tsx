@@ -5,19 +5,19 @@ const AboutSection = () => {
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/FelixJ98",
       description: "Code repositories"
     },
     {
       name: "LinkedIn", 
       icon: Linkedin,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/felixjarquin",
       description: "Professional network"
     },
     {
       name: "Devpost",
       icon: Trophy,
-      url: "https://devpost.com/yourusername", 
+      url: "https://devpost.com/fjwolfe?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav",
       description: "Hackathon projects"
     }
   ];
