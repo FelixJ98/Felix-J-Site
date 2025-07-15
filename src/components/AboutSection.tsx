@@ -1,6 +1,29 @@
 import { Github, Linkedin, Trophy, User } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const AboutSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const profileRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsVisible(entry.isIntersecting);
+        },
+        { threshold: 0.1 }
+    );
+
+    if (profileRef.current) {
+      observer.observe(profileRef.current);
+    }
+
+    return () => {
+      if (profileRef.current) {
+        observer.unobserve(profileRef.current);
+      }
+    };
+  }, []);
+
   const socialLinks = [
     {
       name: "GitHub",
@@ -23,18 +46,23 @@ const AboutSection = () => {
   ];
 
   return (
-      <section id="about" className="py-20 px-4 mb-24">
+      <section id="about" className="py-20 px-4 mb-30">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center space-y-12">
 
             {/* Profile Picture */}
-            <div className="card-tech p-4 w-64 h-64 flex items-center justify-center">
-              {/* Profile Image - replace with your actual image */}
-              { <img
-              src="/src/assets/linkedinprofile.jpg"
-              alt="Felix Jarquin"
-              className="w-full h-full object-cover rounded-lg"
-            /> }
+            <div
+                ref={profileRef}
+                className={`card-tech p-4 w-64 h-64 flex items-center justify-center transition-opacity duration-1000 ${
+                    isVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+            >
+              {/* Profile Image */}
+              <img
+                  src="/src/assets/linkedinprofile.jpg"
+                  alt="Felix Jarquin"
+                  className="w-full h-full object-cover rounded-lg"
+              />
             </div>
 
             {/* Social Links - Horizontal */}
