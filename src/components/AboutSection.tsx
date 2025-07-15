@@ -47,7 +47,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center justify-center">
           
           {/* Left: About Me Cube */}
           <div className="relative">
@@ -86,7 +86,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right: Profile Picture Square with Sliding Rectangles */}
-          <div className="relative aspect-square max-w-96 mx-auto">
+          <div className="relative aspect-square max-w-[500px] mx-auto">
             {/* Background sliding rectangles */}
             <div className="absolute inset-0 overflow-hidden rounded-lg">
               {/* Top sliding rectangle */}
