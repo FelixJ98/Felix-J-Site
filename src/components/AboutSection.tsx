@@ -116,27 +116,18 @@ const AboutSection = () => {
                 transform: `scale(${0.8 + (slideProgress * 0.2)})`
               }}
             >
-              <div className="card-tech p-8 text-center space-y-6 w-full h-full flex flex-col justify-center">
-                {/* Profile placeholder - you can replace with actual image */}
-                <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-4xl font-bold text-primary-foreground">
-                  CS
-                </div>
-                
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-foreground">Computer Science Student</h3>
-                  <p className="text-muted-foreground text-sm">
-                    XR Developer & Tech Enthusiast
-                  </p>
-                </div>
-                
-                <div className="flex justify-center space-x-2">
-                  <span className="tech-badge text-xs">Unity</span>
-                  <span className="tech-badge text-xs">React</span>
-                  <span className="tech-badge text-xs">XR</span>
+              <div className="card-tech p-8 w-full h-full flex flex-col justify-between">
+                {/* Profile Image */}
+                <div className="flex-1 flex items-center justify-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=face"
+                    alt="Profile"
+                    className="w-48 h-48 rounded-lg object-cover"
+                  />
                 </div>
 
                 {/* Social Links as Icon Buttons */}
-                <div className="flex justify-center space-x-4 pt-4">
+                <div className="flex justify-center space-x-4">
                   {socialLinks.map((social) => (
                     <a
                       key={social.name}
