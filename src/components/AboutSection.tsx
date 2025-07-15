@@ -86,7 +86,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right: Profile Picture Square with Sliding Rectangles */}
-          <div className="relative aspect-square max-w-[500px] mx-auto">
+          <div className="relative aspect-square max-w-[600px] mx-auto">
             {/* Background sliding rectangles */}
             <div className="absolute inset-0 overflow-hidden rounded-lg">
               {/* Top sliding rectangle */}
