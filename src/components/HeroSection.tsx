@@ -1,16 +1,20 @@
 import { ChevronDown, Download, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/valeriia-neganova.jpg";
 
 const HeroSection = () => {
   const handleResumeDownload = () => {
-    // Replace with actual resume URL
-    window.open("#", "_blank");
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Felix_Jarquin_Resume.pdf'; // This will be the downloaded filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleCalendlyOpen = () => {
     // Replace with actual Calendly URL
-    window.open("https://calendly.com/your-username", "_blank");
+    window.open("https://calendly.com/fjwolfe", "_blank");
   };
 
   const scrollToAbout = () => {
@@ -29,16 +33,17 @@ const HeroSection = () => {
       }}
     >
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
       
       <div className="relative z-10 text-center space-y-8 px-4">
         {/* Name */}
         <div className="space-y-4">
-          <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Your Name
+          <h1 className="text-6xl md:text-8xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-lg"
+              style={{fontFamily: "'Space Mono', monospace", fontWeight: 400, letterSpacing: '-0.065em'}}>
+              Felix Jarquin
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground font-light">
-            XR Developer & Software Engineer
+            VR/XR Developer & Software Engineer
           </p>
         </div>
 
@@ -49,7 +54,7 @@ const HeroSection = () => {
             className="btn-hero group"
             size="lg"
           >
-            <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+            <Download className="mr-2 h-5 w-5" />
             Download Resume
           </Button>
           
@@ -60,7 +65,7 @@ const HeroSection = () => {
             size="lg"
           >
             <Calendar className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-            Schedule Coffee Chat
+            Schedule A Chat
           </Button>
         </div>
       </div>
