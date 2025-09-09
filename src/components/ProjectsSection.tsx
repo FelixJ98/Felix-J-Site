@@ -1,15 +1,14 @@
 import { Github, ExternalLink } from "lucide-react";
-import cubonetestgif from "@/assets/cubonetestgif.gif";
 
 const ProjectsSection = () => {
   // All projects in a single array
   const projects = [
     {
       id: 1,
-      title: "VR Museum Experience",
-      image: "/src/assets/cubonetestgif.gif",
+      title: "Retexture XR",
+      image: "/src/assets/RETXTRExample.gif",
       techStack: ["Unity", "C#", "OpenXR", "Oculus SDK"],
-      summary: "Immersive virtual museum allowing users to explore historical artifacts in VR with interactive storytelling elements.",
+      summary: "Mixed Reality app that would let you experiment new textures in realtime, use voice prompt to generate a new texture using stable diffusion",
       githubUrl: "https://github.com/yourusername/vr-museum"
     },
     {
