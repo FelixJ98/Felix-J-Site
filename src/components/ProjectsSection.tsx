@@ -21,16 +21,16 @@ const ProjectsSection = () => {
     },
     {
       id: 3,
-      title: "Mixed Reality Workspace",
-      image: "/src/assets/mr-workspace-project.jpg",
+      title: "Paws Up! XR",
+      image: "/src/assets/PawsUpXRGif.gif",
       techStack: ["HoloLens", "MRTK", "Unity", "Azure"],
       summary: "Professional MR application for collaborative 3D design and remote teamwork.",
       githubUrl: "https://github.com/yourusername/mr-workspace"
     },
     {
       id: 4,
-      title: "Paws Up! XR",
-      image: "/src/assets/chat-platform-project.jpg",
+      title: "NA",
+      image: "/src/assets/mr-workspace-project.jpg",
       techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
       summary: "Scalable chat application with real-time messaging, file sharing, and video calls.",
       githubUrl: "https://github.com/yourusername/chat-platform"
