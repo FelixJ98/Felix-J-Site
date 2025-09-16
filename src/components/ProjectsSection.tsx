@@ -13,10 +13,10 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
-      title: "AR Shopping Assistant",
-      image: "/src/assets/ar-shopping-project.jpg",
+      title: "Cozy Desk XR",
+      image: "/src/assets/CozyDeskTestGif.gif",
       techStack: ["ARCore", "Unity", "C#", "ML Kit"],
-      summary: "Mobile AR app that helps users visualize furniture in their space before purchasing.",
+      summary: "An XR productivity app where sustained focus cultivates an evolving mixed reality village while you craft your perfect cozy workspace environment.",
       githubUrl: "https://github.com/yourusername/ar-shopping"
     },
     {
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
     },
     {
       id: 4,
-      title: "Real-time Chat Platform",
+      title: "Paws Up! XR",
       image: "/src/assets/chat-platform-project.jpg",
       techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
       summary: "Scalable chat application with real-time messaging, file sharing, and video calls.",
