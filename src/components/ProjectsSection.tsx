@@ -5,7 +5,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Retexture XR",
+      title: "Re-TXR",
       image: "/src/assets/RETXTRExample.gif",
       techStack: ["Unity", "C#", "OpenXR", "Oculus SDK"],
       summary: "Mixed Reality app that would let you experiment new textures in realtime, use voice prompt to generate a new texture using stable diffusion",
@@ -29,18 +29,18 @@ const ProjectsSection = () => {
     },
     {
       id: 4,
-      title: "NA",
-      image: "/src/assets/mr-workspace-project.jpg",
+      title: "CatTrax",
+      image: "/src/assets/CatraxGifTest.gif",
       techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
-      summary: "Scalable chat application with real-time messaging, file sharing, and video calls.",
+      summary: "A VR game featuring top-down train control where players strategically manipulate track switches, clear path obstacles, and interact with dynamic railway elements to guide their cat conductor safely through challenging terrain and hazardous routes.",
       githubUrl: "https://github.com/yourusername/chat-platform"
     },
     {
       id: 5,
-      title: "AI Code Assistant",
-      image: "/src/assets/ai-assistant-project.jpg",
+      title: "GreenifyMe",
+      image: "/src/assets/GreenifyMeGifTest.gif",
       techStack: ["Python", "OpenAI API", "FastAPI", "React"],
-      summary: "VS Code extension that provides intelligent code suggestions and documentation generation.",
+      summary: "Developed an image-to-image generative AI using Stable Diffusion to visualize greenery additions in user environments, built with Python, and Flask, for climate visualization and urban heat reduction planning.",
       githubUrl: "https://github.com/yourusername/ai-assistant"
     },
     {
@@ -59,22 +59,7 @@ const ProjectsSection = () => {
       summary: "3D puzzle-adventure game with physics-based mechanics and multiplayer co-op mode.",
       githubUrl: "https://github.com/yourusername/puzzle-game"
     },
-    {
-      id: 8,
-      title: "2D Platformer Engine",
-      image: "/src/assets/platformer-engine-project.jpg",
-      techStack: ["C++", "OpenGL", "Box2D", "FMOD"],
-      summary: "Custom 2D game engine built from scratch with physics, audio, and scripting systems.",
-      githubUrl: "https://github.com/yourusername/2d-engine"
-    },
-    {
-      id: 9,
-      title: "Strategy Card Game",
-      image: "/src/assets/card-game-project.jpg",
-      techStack: ["Unity", "C#", "Mirror", "Firebase"],
-      summary: "Turn-based strategy card game with deck building mechanics and online multiplayer.",
-      githubUrl: "https://github.com/yourusername/card-game"
-    }
+
   ];
 
   return (
