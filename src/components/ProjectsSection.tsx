@@ -1,148 +1,114 @@
-import { useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { HoverGif } from "@/components/HoverGif";
 
-// Import your static images and GIFs here
-// Example imports (replace with your actual files):
-// import vrMuseumStatic from '@/assets/vr-museum-static.jpg';
-// import vrMuseumGif from '@/assets/vr-museum.gif';
+// Import your GIFs
+import RETXTRGif from "@/assets/RETXTRExample.gif";
+import CozyDeskGif from "@/assets/CozyDeskTestGif.gif";
+import GreenifyMeGif from "@/assets/GreenifyMeGifTest.gif";
+import CatraxGif from "@/assets/CatraxGifTest.gif";
+import PawsUpXRGif from "@/assets/PawsUpXRGif.gif";
+import EsperantoXRGif from "@/assets/EsperantoXRGIF.gif";
+
+// Import the one static image you have
+import CloudManagerStatic from "@/assets/cloud-manager-project.jpg";
+
+// You'll need to add static images (first frames) for each GIF project
+// For now, I'll use the GIFs as placeholders for static images too
+// Ideally, export the first frame of each GIF as a .jpg or .png
 
 const ProjectsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("XR/VR");
-
-  const categories = ["XR/VR", "Software Engineering", "Game Design"];
-
-  // Sample project data - replace with your actual projects
-  const projects = {
-    "XR/VR": [
-      {
-        id: 1,
-        title: "VR Museum Experience",
-        image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=600&h=400&fit=crop",
-        // Add these fields for GIF support (replace with your actual files):
-        staticImage: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=600&h=400&fit=crop",
-        gifImage: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=600&h=400&fit=crop", // Replace with your .gif file
-        techStack: ["Unity", "C#", "OpenXR", "Oculus SDK"],
-        summary: "Immersive virtual museum allowing users to explore historical artifacts in VR with interactive storytelling elements.",
-        githubUrl: "https://github.com/yourusername/vr-museum"
-      },
-      {
-        id: 2,
-        title: "AR Shopping Assistant",
-        image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
-        techStack: ["ARCore", "Unity", "C#", "ML Kit"],
-        summary: "Mobile AR app that helps users visualize furniture in their space before purchasing.",
-        githubUrl: "https://github.com/yourusername/ar-shopping"
-      },
-      {
-        id: 3,
-        title: "Mixed Reality Workspace",
-        image: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=600&h=400&fit=crop",
-        techStack: ["HoloLens", "MRTK", "Unity", "Azure"],
-        summary: "Professional MR application for collaborative 3D design and remote teamwork.",
-        githubUrl: "https://github.com/yourusername/mr-workspace"
-      }
-    ],
-    "Software Engineering": [
-      {
-        id: 4,
-        title: "Real-time Chat Platform",
-        image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-        techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
-        summary: "Scalable chat application with real-time messaging, file sharing, and video calls.",
-        githubUrl: "https://github.com/yourusername/chat-platform"
-      },
-      {
-        id: 5,
-        title: "AI Code Assistant",
-        image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
-        techStack: ["Python", "OpenAI API", "FastAPI", "React"],
-        summary: "VS Code extension that provides intelligent code suggestions and documentation generation.",
-        githubUrl: "https://github.com/yourusername/ai-assistant"
-      },
-      {
-        id: 6,
-        title: "Cloud Infrastructure Manager",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
-        techStack: ["AWS", "Terraform", "Docker", "Kubernetes"],
-        summary: "Automated deployment and monitoring system for microservices architecture.",
-        githubUrl: "https://github.com/yourusername/cloud-manager"
-      }
-    ],
-    "Game Design": [
-      {
-        id: 7,
-        title: "Puzzle Adventure Game",
-        image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
-        techStack: ["Unity", "C#", "Blender", "Photon"],
-        summary: "3D puzzle-adventure game with physics-based mechanics and multiplayer co-op mode.",
-        githubUrl: "https://github.com/yourusername/puzzle-game"
-      },
-      {
-        id: 8,
-        title: "2D Platformer Engine",
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop",
-        techStack: ["C++", "OpenGL", "Box2D", "FMOD"],
-        summary: "Custom 2D game engine built from scratch with physics, audio, and scripting systems.",
-        githubUrl: "https://github.com/yourusername/2d-engine"
-      },
-      {
-        id: 9,
-        title: "Strategy Card Game",
-        image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=600&h=400&fit=crop",
-        techStack: ["Unity", "C#", "Mirror", "Firebase"],
-        summary: "Turn-based strategy card game with deck building mechanics and online multiplayer.",
-        githubUrl: "https://github.com/yourusername/card-game"
-      }
-    ]
-  };
-
-  const currentProjects = projects[activeCategory as keyof typeof projects];
+  // All projects in a single array
+  const projects = [
+    {
+      id: 1,
+      title: "Re-TXR",
+      staticImage: RETXTRGif, // Replace with static image when you have it
+      gifImage: RETXTRGif,
+      techStack: ["AI SD", "XR", "Unity", "C#", "Meta SDK"],
+      summary: "Mixed Reality app that would let you experiment new textures in realtime, use voice prompt to generate a new texture using stable diffusion",
+      githubUrl: "https://github.com/yourusername/vr-museum"
+    },
+    {
+      id: 2,
+      title: "Cozy Desk XR",
+      staticImage: CozyDeskGif, // Replace with static image when you have it
+      gifImage: CozyDeskGif,
+      techStack: ["XR", "Unity", "C#", "Meta MRUK"],
+      summary: "An XR productivity app where sustained focus cultivates an evolving mixed reality village while you craft your perfect cozy workspace environment.",
+      githubUrl: "https://github.com/yourusername/ar-shopping"
+    },
+    {
+      id: 3,
+      title: "GreenifyMe",
+      staticImage: GreenifyMeGif, // Replace with static image when you have it
+      gifImage: GreenifyMeGif,
+      techStack: ["Python","Flask", "AI SD", "ML", "React"],
+      summary: "Second Place AI Hackathon Winner! Image-to-image generative AI to showcase ways to add greenery in user environments, with a Flask extension for climate data visualization and urban heat reduction planning.",
+      githubUrl: "https://github.com/yourusername/ai-assistant"
+    },
+    {
+      id: 4,
+      title: "CatTrax",
+      staticImage: CatraxGif, // Replace with static image when you have it
+      gifImage: CatraxGif,
+      techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
+      summary: "A VR game featuring top-down train control where players strategically manipulate track switches, clear path obstacles, and interact with dynamic railway elements to guide their cat conductor safely through challenging terrain and hazardous routes.",
+      githubUrl: "https://github.com/yourusername/chat-platform"
+    },
+    {
+      id: 5,
+      title: "Paws Up! XR",
+      staticImage: PawsUpXRGif, // Replace with static image when you have it
+      gifImage: PawsUpXRGif,
+      techStack: ["HoloLens", "MRTK", "Unity", "Azure"],
+      summary: "Take a virtual tour of FIU campus by stepping inside an XR diorama map, transporting yourself inside and get a 360 view of campus buildings and landmarks.",
+      githubUrl: "https://github.com/yourusername/mr-workspace"
+    },
+    {
+      id: 6,
+      title: "Fright Light",
+      staticImage: CloudManagerStatic, // This one has a static image!
+      gifImage: null, // No GIF for this one
+      techStack: ["Unreal 4", "Blender"],
+      summary: "VR asymmetrical multiplayer Party Game using Unreal engine with one main VR player playing against 4 other players on via PC couch co-op",
+      githubUrl: "https://github.com/yourusername/cloud-manager"
+    },
+    {
+      id: 7,
+      title: "Esperanto XR",
+      staticImage: EsperantoXRGif, // Replace with static image when you have it
+      gifImage: EsperantoXRGif,
+      techStack: ["Unity", "C#", "Blender", "Normcore"],
+      summary: "MIT Reality Hacks project a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality.",
+      githubUrl: "https://github.com/yourusername/puzzle-game"
+    },
+  ];
 
   return (
     <section id="projects" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-primary leading-tight">
-            Featured Projects
+          <h2 className="text-4xl font-bold mb-4 leading-relaxed bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore my portfolio of immersive experiences, software solutions, and interactive games
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto -mt-5">
+            My portfolio of mixed reality, software development, and game design projects.
           </p>
-        </div>
-
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              variant={activeCategory === category ? "default" : "outline"}
-              className={`px-6 py-3 font-semibold transition-all duration-300 ${
-                activeCategory === category 
-                  ? "btn-hero scale-105" 
-                  : "btn-hero-secondary hover:scale-105"
-              }`}
-            >
-              {category}
-            </Button>
-          ))}
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentProjects.map((project) => (
-            <div 
-              key={project.id} 
-              className="card-tech p-6 group hover:scale-105 transition-all duration-300"
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`card-tech p-6 group hover:scale-105 transition-all duration-300 ${
+                index === projects.length - 1 ? 'lg:col-start-2' : ''
+              }`}
             >
-              {/* Project Image */}
+              {/* Project Image with Hover GIF */}
               <div className="relative overflow-hidden rounded-lg mb-4 h-48">
-                {/* Use HoverGif if gifImage is available, otherwise use regular image */}
-                {project.gifImage && project.staticImage ? (
+                {project.gifImage ? (
                   <HoverGif
                     staticSrc={project.staticImage}
                     gifSrc={project.gifImage}
@@ -150,8 +116,8 @@ const ProjectsSection = () => {
                     className="rounded-lg"
                   />
                 ) : (
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.staticImage}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
