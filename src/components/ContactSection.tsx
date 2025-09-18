@@ -54,7 +54,7 @@ const ContactSection = () => {
       const mailtoBody = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
       const mailtoUrl = `mailto:fjwolfe@hotmail.com?subject=${encodeURIComponent(formData.subject)}&body=${mailtoBody}`;
 
-      // Small delay to show "Sending..." state 
+      // Small delay to show "Sending..." state
       await new Promise(resolve => setTimeout(resolve, 500));
 
       window.open(mailtoUrl, '_blank');
@@ -80,10 +80,10 @@ const ContactSection = () => {
   const handleResumeDownload = () => {
     try {
       // Make sure you put resume.pdf in your public folder
-      const resumeUrl = '/resume.pdf';
+      const resumeUrl = 'FelixJ-Resume.pdf';
       const link = document.createElement('a');
       link.href = resumeUrl;
-      link.download = 'YourName-Resume.pdf'; // Replace with your actual name
+      link.download = 'FelixJ-Resume.pdf'; // Replace with your actual name
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

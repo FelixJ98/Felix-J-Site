@@ -66,7 +66,7 @@ const ProjectsSection = () => {
       staticImage: "/src/assets/EsperantoStatic.png",
       gifImage: "/src/assets/EsperantoXRGIF.gif",
       techStack: ["C#", "Unity", "Normcore", "Meta SDK"],
-      summary: "MIT Reality Hacks project a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality.",
+      summary: "MIT Reality Hacks project, a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality.",
       githubUrl: "https://devpost.com/software/esperanto-xr"
     },
   ];
