@@ -55,7 +55,7 @@ const ProjectsSection = () => {
       id: 6,
       title: "Fright Light",
       staticImage: "/src/assets/FrightLightStatic.png",
-      gifImage: null, // No GIF for this one
+      gifImage: "/src/assets/FrightLightGif.gif",
       techStack: ["VR","Unreal 5", "Blender"],
       summary: "VR asymmetrical multiplayer Party Game using Unreal engine with one main VR player playing against 4 other players on via PC couch co-op",
       githubUrl: "https://github.com/CrisBlu/Fright-Light"
