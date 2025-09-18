@@ -1,7 +1,21 @@
 import { Github, ExternalLink } from "lucide-react";
-import { HoverGif } from "@/components/HoverGif";
+import { useRef } from "react";
 
 const ProjectsSection = () => {
+  const mediaRefs = useRef<{ [key: number]: HTMLImageElement }>({});
+  
+  // Function to handle hover - restart GIF animation
+  const handleMouseEnter = (projectId: number) => {
+    const imgElement = mediaRefs.current[projectId];
+    if (imgElement && imgElement.src.includes('.gif')) {
+      const originalSrc = imgElement.src;
+      imgElement.src = '';
+      setTimeout(() => {
+        imgElement.src = originalSrc;
+      }, 10);
+    }
+  };
+
   // All projects in a single array
   const projects = [
     {
@@ -100,21 +114,18 @@ const ProjectsSection = () => {
               }`}
             >
               {/* Project Image with Hover GIF */}
-              <div className="relative overflow-hidden rounded-lg mb-4 h-48">
-                {project.useHoverGif && project.gifImage ? (
-                  <HoverGif
-                    staticSrc={project.staticImage}
-                    gifSrc={project.gifImage}
-                    alt={project.title}
-                    className="rounded-lg"
-                  />
-                ) : (
-                  <img
-                    src={project.staticImage}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                )}
+              <div 
+                className="relative overflow-hidden rounded-lg mb-4 h-48"
+                onMouseEnter={() => handleMouseEnter(project.id)}
+              >
+                <img
+                  ref={(el) => {
+                    if (el) mediaRefs.current[project.id] = el;
+                  }}
+                  src={project.gifImage || project.staticImage}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent pointer-events-none"></div>
               </div>
 
