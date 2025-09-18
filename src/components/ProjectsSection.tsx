@@ -56,7 +56,7 @@ const ProjectsSection = () => {
           title: "Esperanto XR",
           image: "/src/assets/EsperantoXRGIF.gif",
           techStack: ["Unity", "C#", "Blender", "Normcore"],
-          summary: "MIT Reality Hacks project a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality",
+          summary: "MIT Reality Hacks project a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality.",
           githubUrl: "https://github.com/yourusername/puzzle-game"
       },
   ];
@@ -64,23 +64,24 @@ const ProjectsSection = () => {
   return (
       <section id="projects" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 leading-relaxed bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Projects
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto -mt-5">
-              My portfolio of mixed reality, software design, and game design projects.
+              My portfolio of mixed reality, software development, and game design projects.
             </p>
           </div>
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
                 <div
                     key={project.id}
-                    className="card-tech p-6 group hover:scale-105 transition-all duration-300"
+                    className={`card-tech p-6 group hover:scale-105 transition-all duration-300 ${
+                        index === projects.length - 1 ? 'lg:col-start-2' : ''
+                    }`}
                 >
                   {/* Project Image */}
                   <div className="relative overflow-hidden rounded-lg mb-4">
