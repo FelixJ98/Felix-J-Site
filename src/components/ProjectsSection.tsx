@@ -24,7 +24,7 @@ const ProjectsSection = () => {
       title: "Paws Up! XR",
       image: "/src/assets/PawsUpXRGif.gif",
       techStack: ["HoloLens", "MRTK", "Unity", "Azure"],
-      summary: "Professional MR application for collaborative 3D design and remote teamwork.",
+      summary: "Take a virtual tour of FIU campus by stepping inside an XR diorama map, transporting yourself inside and get a 360 view of campus buildings and landmarks.",
       githubUrl: "https://github.com/yourusername/mr-workspace"
     },
     {
@@ -56,7 +56,7 @@ const ProjectsSection = () => {
           title: "Esperanto XR",
           image: "/src/assets/EsperantoXRGIF.gif",
           techStack: ["Unity", "C#", "Blender", "Normcore"],
-          summary: "3D puzzle-adventure game with physics-based mechanics and multiplayer co-op mode.",
+          summary: "MIT Reality Hacks project a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality",
           githubUrl: "https://github.com/yourusername/puzzle-game"
       },
   ];
