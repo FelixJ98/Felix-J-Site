@@ -1,5 +1,11 @@
 import { Github, ExternalLink } from "lucide-react";
 import { useRef } from "react";
+import RETXTRExample from "@/assets/RETXTRExample.gif";
+import CozyDeskTestGif from "@/assets/CozyDeskTestGif.gif";
+import GreenifyMeGifTest from "@/assets/GreenifyMeGifTest.gif";
+import CatraxGifTest from "@/assets/CatraxGifTest.gif";
+import PawsUpXRGif from "@/assets/PawsUpXRGif.gif";
+import EsperantoXRGIF from "@/assets/EsperantoXRGIF.gif";
 
 const ProjectsSection = () => {
   const mediaRefs = useRef<{ [key: number]: HTMLImageElement }>({});
@@ -21,10 +27,9 @@ const ProjectsSection = () => {
     {
       id: 1,
       title: "Re-TXR",
-      // Using string paths until you upload the actual files
-      staticImage: "/src/assets/RETXTRExample.gif", // Replace with static image when available
-      gifImage: "/src/assets/RETXTRExample.gif",
-      useHoverGif: false, // Set to true when you have both static and gif files
+      staticImage: RETXTRExample,
+      gifImage: RETXTRExample,
+      useHoverGif: false,
       techStack: ["AI SD", "XR", "Unity", "C#", "Meta SDK"],
       summary: "Mixed Reality app that would let you experiment new textures in realtime, use voice prompt to generate a new texture using stable diffusion",
       githubUrl: "https://github.com/yourusername/vr-museum"
@@ -32,8 +37,8 @@ const ProjectsSection = () => {
     {
       id: 2,
       title: "Cozy Desk XR",
-      staticImage: "/src/assets/CozyDeskTestGif.gif",
-      gifImage: "/src/assets/CozyDeskTestGif.gif",
+      staticImage: CozyDeskTestGif,
+      gifImage: CozyDeskTestGif,
       useHoverGif: false,
       techStack: ["XR", "Unity", "C#", "Meta MRUK"],
       summary: "An XR productivity app where sustained focus cultivates an evolving mixed reality village while you craft your perfect cozy workspace environment.",
@@ -42,8 +47,8 @@ const ProjectsSection = () => {
     {
       id: 3,
       title: "GreenifyMe",
-      staticImage: "/src/assets/GreenifyMeGifTest.gif",
-      gifImage: "/src/assets/GreenifyMeGifTest.gif",
+      staticImage: GreenifyMeGifTest,
+      gifImage: GreenifyMeGifTest,
       useHoverGif: false,
       techStack: ["Python","Flask", "AI SD", "ML", "React"],
       summary: "Second Place AI Hackathon Winner! Image-to-image generative AI to showcase ways to add greenery in user environments, with a Flask extension for climate data visualization and urban heat reduction planning.",
@@ -52,8 +57,8 @@ const ProjectsSection = () => {
     {
       id: 4,
       title: "CatTrax",
-      staticImage: "/src/assets/CatraxGifTest.gif",
-      gifImage: "/src/assets/CatraxGifTest.gif",
+      staticImage: CatraxGifTest,
+      gifImage: CatraxGifTest,
       useHoverGif: false,
       techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
       summary: "A VR game featuring top-down train control where players strategically manipulate track switches, clear path obstacles, and interact with dynamic railway elements to guide their cat conductor safely through challenging terrain and hazardous routes.",
@@ -62,8 +67,8 @@ const ProjectsSection = () => {
     {
       id: 5,
       title: "Paws Up! XR",
-      staticImage: "/src/assets/PawsUpXRGif.gif",
-      gifImage: "/src/assets/PawsUpXRGif.gif",
+      staticImage: PawsUpXRGif,
+      gifImage: PawsUpXRGif,
       useHoverGif: false,
       techStack: ["HoloLens", "MRTK", "Unity", "Azure"],
       summary: "Take a virtual tour of FIU campus by stepping inside an XR diorama map, transporting yourself inside and get a 360 view of campus buildings and landmarks.",
@@ -82,8 +87,8 @@ const ProjectsSection = () => {
     {
       id: 7,
       title: "Esperanto XR",
-      staticImage: "/src/assets/EsperantoXRGIF.gif",
-      gifImage: "/src/assets/EsperantoXRGIF.gif",
+      staticImage: EsperantoXRGIF,
+      gifImage: EsperantoXRGIF,
       useHoverGif: false,
       techStack: ["Unity", "C#", "Blender", "Normcore"],
       summary: "MIT Reality Hacks project a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality.",
