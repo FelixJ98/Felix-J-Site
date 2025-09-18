@@ -45,21 +45,20 @@ const ProjectsSection = () => {
     },
     {
       id: 6,
-      title: "Cloud Infrastructure Manager",
+      title: "Fright Light",
       image: "/src/assets/cloud-manager-project.jpg",
-      techStack: ["AWS", "Terraform", "Docker", "Kubernetes"],
-      summary: "Automated deployment and monitoring system for microservices architecture.",
+      techStack: ["Unreal 4", "Blender"],
+      summary: "VR asymmetrical multiplayer Party Game using Unreal engine with one main VR player playing against 4 other players on via PC couch co-op",
       githubUrl: "https://github.com/yourusername/cloud-manager"
     },
-    {
-      id: 7,
-      title: "Puzzle Adventure Game",
-      image: "/src/assets/puzzle-game-project.jpg",
-      techStack: ["Unity", "C#", "Blender", "Photon"],
-      summary: "3D puzzle-adventure game with physics-based mechanics and multiplayer co-op mode.",
-      githubUrl: "https://github.com/yourusername/puzzle-game"
-    },
-
+      {
+          id: 7,
+          title: "Esperanto XR",
+          image: "/src/assets/EsperantoXRGIF.gif",
+          techStack: ["Unity", "C#", "Blender", "Normcore"],
+          summary: "3D puzzle-adventure game with physics-based mechanics and multiplayer co-op mode.",
+          githubUrl: "https://github.com/yourusername/puzzle-game"
+      },
   ];
 
   return (
