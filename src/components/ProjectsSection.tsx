@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HoverGif } from "@/components/HoverGif";
+
+// Import your static images and GIFs here
+// Example imports (replace with your actual files):
+// import vrMuseumStatic from '@/assets/vr-museum-static.jpg';
+// import vrMuseumGif from '@/assets/vr-museum.gif';
 
 const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState("XR/VR");
@@ -14,6 +20,9 @@ const ProjectsSection = () => {
         id: 1,
         title: "VR Museum Experience",
         image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=600&h=400&fit=crop",
+        // Add these fields for GIF support (replace with your actual files):
+        staticImage: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=600&h=400&fit=crop",
+        gifImage: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=600&h=400&fit=crop", // Replace with your .gif file
         techStack: ["Unity", "C#", "OpenXR", "Oculus SDK"],
         summary: "Immersive virtual museum allowing users to explore historical artifacts in VR with interactive storytelling elements.",
         githubUrl: "https://github.com/yourusername/vr-museum"
@@ -131,13 +140,23 @@ const ProjectsSection = () => {
               className="card-tech p-6 group hover:scale-105 transition-all duration-300"
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden rounded-lg mb-4">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+              <div className="relative overflow-hidden rounded-lg mb-4 h-48">
+                {/* Use HoverGif if gifImage is available, otherwise use regular image */}
+                {project.gifImage && project.staticImage ? (
+                  <HoverGif
+                    staticSrc={project.staticImage}
+                    gifSrc={project.gifImage}
+                    alt={project.title}
+                    className="rounded-lg"
+                  />
+                ) : (
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent pointer-events-none"></div>
               </div>
 
               {/* Project Content */}
