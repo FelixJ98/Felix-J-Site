@@ -1,29 +1,16 @@
 import { Github, ExternalLink } from "lucide-react";
 import { HoverGif } from "@/components/HoverGif";
 
-// Import your GIFs
-import RETXTRGif from "@/assets/RETXTRExample.gif";
-import CozyDeskGif from "@/assets/CozyDeskTestGif.gif";
-import GreenifyMeGif from "@/assets/GreenifyMeGifTest.gif";
-import CatraxGif from "@/assets/CatraxGifTest.gif";
-import PawsUpXRGif from "@/assets/PawsUpXRGif.gif";
-import EsperantoXRGif from "@/assets/EsperantoXRGIF.gif";
-
-// Import the one static image you have
-import CloudManagerStatic from "@/assets/cloud-manager-project.jpg";
-
-// You'll need to add static images (first frames) for each GIF project
-// For now, I'll use the GIFs as placeholders for static images too
-// Ideally, export the first frame of each GIF as a .jpg or .png
-
 const ProjectsSection = () => {
   // All projects in a single array
   const projects = [
     {
       id: 1,
       title: "Re-TXR",
-      staticImage: RETXTRGif, // Replace with static image when you have it
-      gifImage: RETXTRGif,
+      // Using string paths until you upload the actual files
+      staticImage: "/src/assets/RETXTRExample.gif", // Replace with static image when available
+      gifImage: "/src/assets/RETXTRExample.gif",
+      useHoverGif: false, // Set to true when you have both static and gif files
       techStack: ["AI SD", "XR", "Unity", "C#", "Meta SDK"],
       summary: "Mixed Reality app that would let you experiment new textures in realtime, use voice prompt to generate a new texture using stable diffusion",
       githubUrl: "https://github.com/yourusername/vr-museum"
@@ -31,8 +18,9 @@ const ProjectsSection = () => {
     {
       id: 2,
       title: "Cozy Desk XR",
-      staticImage: CozyDeskGif, // Replace with static image when you have it
-      gifImage: CozyDeskGif,
+      staticImage: "/src/assets/CozyDeskTestGif.gif",
+      gifImage: "/src/assets/CozyDeskTestGif.gif",
+      useHoverGif: false,
       techStack: ["XR", "Unity", "C#", "Meta MRUK"],
       summary: "An XR productivity app where sustained focus cultivates an evolving mixed reality village while you craft your perfect cozy workspace environment.",
       githubUrl: "https://github.com/yourusername/ar-shopping"
@@ -40,8 +28,9 @@ const ProjectsSection = () => {
     {
       id: 3,
       title: "GreenifyMe",
-      staticImage: GreenifyMeGif, // Replace with static image when you have it
-      gifImage: GreenifyMeGif,
+      staticImage: "/src/assets/GreenifyMeGifTest.gif",
+      gifImage: "/src/assets/GreenifyMeGifTest.gif",
+      useHoverGif: false,
       techStack: ["Python","Flask", "AI SD", "ML", "React"],
       summary: "Second Place AI Hackathon Winner! Image-to-image generative AI to showcase ways to add greenery in user environments, with a Flask extension for climate data visualization and urban heat reduction planning.",
       githubUrl: "https://github.com/yourusername/ai-assistant"
@@ -49,8 +38,9 @@ const ProjectsSection = () => {
     {
       id: 4,
       title: "CatTrax",
-      staticImage: CatraxGif, // Replace with static image when you have it
-      gifImage: CatraxGif,
+      staticImage: "/src/assets/CatraxGifTest.gif",
+      gifImage: "/src/assets/CatraxGifTest.gif",
+      useHoverGif: false,
       techStack: ["React", "Node.js", "Socket.io", "MongoDB"],
       summary: "A VR game featuring top-down train control where players strategically manipulate track switches, clear path obstacles, and interact with dynamic railway elements to guide their cat conductor safely through challenging terrain and hazardous routes.",
       githubUrl: "https://github.com/yourusername/chat-platform"
@@ -58,8 +48,9 @@ const ProjectsSection = () => {
     {
       id: 5,
       title: "Paws Up! XR",
-      staticImage: PawsUpXRGif, // Replace with static image when you have it
-      gifImage: PawsUpXRGif,
+      staticImage: "/src/assets/PawsUpXRGif.gif",
+      gifImage: "/src/assets/PawsUpXRGif.gif",
+      useHoverGif: false,
       techStack: ["HoloLens", "MRTK", "Unity", "Azure"],
       summary: "Take a virtual tour of FIU campus by stepping inside an XR diorama map, transporting yourself inside and get a 360 view of campus buildings and landmarks.",
       githubUrl: "https://github.com/yourusername/mr-workspace"
@@ -67,8 +58,9 @@ const ProjectsSection = () => {
     {
       id: 6,
       title: "Fright Light",
-      staticImage: CloudManagerStatic, // This one has a static image!
-      gifImage: null, // No GIF for this one
+      staticImage: "/src/assets/cloud-manager-project.jpg",
+      gifImage: null,
+      useHoverGif: false,
       techStack: ["Unreal 4", "Blender"],
       summary: "VR asymmetrical multiplayer Party Game using Unreal engine with one main VR player playing against 4 other players on via PC couch co-op",
       githubUrl: "https://github.com/yourusername/cloud-manager"
@@ -76,8 +68,9 @@ const ProjectsSection = () => {
     {
       id: 7,
       title: "Esperanto XR",
-      staticImage: EsperantoXRGif, // Replace with static image when you have it
-      gifImage: EsperantoXRGif,
+      staticImage: "/src/assets/EsperantoXRGIF.gif",
+      gifImage: "/src/assets/EsperantoXRGIF.gif",
+      useHoverGif: false,
       techStack: ["Unity", "C#", "Blender", "Normcore"],
       summary: "MIT Reality Hacks project a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality.",
       githubUrl: "https://github.com/yourusername/puzzle-game"
@@ -108,7 +101,7 @@ const ProjectsSection = () => {
             >
               {/* Project Image with Hover GIF */}
               <div className="relative overflow-hidden rounded-lg mb-4 h-48">
-                {project.gifImage ? (
+                {project.useHoverGif && project.gifImage ? (
                   <HoverGif
                     staticSrc={project.staticImage}
                     gifSrc={project.gifImage}
