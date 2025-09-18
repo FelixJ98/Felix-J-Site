@@ -22,7 +22,7 @@ const ProjectsSection = () => {
       gifImage: "/src/assets/CozyDeskTestGif.gif",
       techStack: ["XR", "C#", "Unity", "Meta MRUK"],
       summary: "An XR productivity app where sustained focus cultivates an evolving mixed reality village while you craft your perfect cozy workspace environment.",
-      githubUrl: "https://github.com/yourusername/ar-shopping"
+      githubUrl: "https://github.com/FelixJ98/CozyDeskMVP"
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const ProjectsSection = () => {
       gifImage: "/src/assets/GreenifyMeGifTest.gif",
       techStack: ["Python","Flask", "AI SD", "ML", "React"],
       summary: "Second Place AI Hackathon Winner! Image-to-image generative AI to showcase ways to add greenery in user environments, with a Flask extension for climate data visualization and urban heat reduction planning.",
-      githubUrl: "https://github.com/yourusername/ai-assistant"
+      githubUrl: "https://devpost.com/software/greenifyme-o1ceuz"
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ const ProjectsSection = () => {
       gifImage: "/src/assets/CatraxGifTest.gif",
       techStack: ["VR", "C#", "Unity", "Blender"],
       summary: "A VR game featuring top-down train control where players strategically manipulate track switches, clear path obstacles, and interact with dynamic railway elements to guide their cat conductor safely through challenging terrain and hazardous routes.",
-      githubUrl: "https://github.com/yourusername/chat-platform"
+      githubUrl: "https://github.com/INIT-BUILD-VR-2022/CatConductor-VR"
     },
     {
       id: 5,
@@ -49,7 +49,7 @@ const ProjectsSection = () => {
       gifImage: "/src/assets/PawsUpXRGif.gif",
       techStack: ["XR", "C#", "Unity", "Gaussian Splats", "PhotoSpheres"],
       summary: "Take a virtual tour of FIU campus by stepping inside an XR diorama map, transporting yourself inside and get a 360 view of campus buildings and landmarks.",
-      githubUrl: "https://github.com/yourusername/mr-workspace"
+      githubUrl: "https://github.com/FelixJ98/PawsUp"
     },
     {
       id: 6,
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
       gifImage: null, // No GIF for this one
       techStack: ["VR","Unreal 5", "Blender"],
       summary: "VR asymmetrical multiplayer Party Game using Unreal engine with one main VR player playing against 4 other players on via PC couch co-op",
-      githubUrl: "https://github.com/yourusername/cloud-manager"
+      githubUrl: "https://github.com/CrisBlu/Fright-Light"
     },
     {
       id: 7,
@@ -67,7 +67,7 @@ const ProjectsSection = () => {
       gifImage: "/src/assets/EsperantoXRGIF.gif",
       techStack: ["C#", "Unity", "Normcore", "Meta SDK"],
       summary: "MIT Reality Hacks project a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality.",
-      githubUrl: "https://github.com/yourusername/puzzle-game"
+      githubUrl: "https://devpost.com/software/esperanto-xr"
     },
   ];
 
