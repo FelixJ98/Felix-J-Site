@@ -99,17 +99,18 @@ const AboutSection = () => {
                   <h2 className="text-3xl font-bold text-primary">About Me</h2>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                      I'm a passionate Computer Science student specializing in Extended Reality (XR)
-                      and immersive technologies. My journey spans across VR/AR development,
-                      software engineering, and game design.
+                      I'm a passionate Computer Science graduate with a strong passion for XR, VR, and immersive technologies.
                     </p>
                     <p>
-                      With hands-on experience in Unity, Unreal Engine, and cutting-edge XR frameworks,
-                      I love creating digital experiences that blur the line between reality and imagination.
+                      What motivates me is being able to experiment and research new ways to interact with technology,
+                      always pushing toward creating something genuinely unique.
+                      I've worked as a software engineer and STEM tutor, and have received professional training in developing polished,
+                      MVP ready XR and VR demos.
                     </p>
                     <p>
-                      When I'm not coding, you'll find me exploring the latest in spatial computing,
-                      participating in hackathons, or collaborating on open-source projects.
+                      I'm actively involved in the tech community through hackathons and computer science organizations like INIT FIU,
+                      where I collaborate with other developers on innovative projects through the INIT Build program.
+                      I thrive in research and development environments where we can push boundaries and explore what's next in spatial computing.
                     </p>
                   </div>
 
@@ -117,7 +118,7 @@ const AboutSection = () => {
                   <div className="space-y-3">
                     <h3 className="text-lg font-semibold text-foreground">Core Technologies</h3>
                     <div className="flex flex-wrap gap-2">
-                      {["Unity", "Unreal Engine", "C#", "C++", "React", "TypeScript", "OpenXR"].map((tech) => (
+                      {["XR/VR", "Unity", "Unreal Engine", "C#", "C++", "Swift", "Python", "JavaScript", "Machine Learning", "Stable Diffusion","Web Development"].map((tech) => (
                           <span key={tech} className="tech-badge">
                         {tech}
                       </span>
