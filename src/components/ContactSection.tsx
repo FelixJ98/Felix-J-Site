@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -27,16 +28,44 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission - replace with actual API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        'service_xdyf76a',      // Replace with your EmailJS service ID
+        'template_grlewrr',     // Replace with your EmailJS template ID
+        templateParams,
+        'psBwDuWaN3hNH8ubc'       // Replace with your EmailJS public key
+      );
+
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
-      
+
       setFormData({ name: "", email: "", subject: "", message: "" });
+
+      // Option 2: Mailto fallback (Works immediately)
+      const mailtoBody = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+      const mailtoUrl = `mailto:fjwolfe@hotmail.com?subject=${encodeURIComponent(formData.subject)}&body=${mailtoBody}`;
+
+      // Small delay to show "Sending..." state 
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      window.open(mailtoUrl, '_blank');
+
+      toast({
+        title: "Email client opened",
+        description: "Please send the email from your email application.",
+      });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
     } catch (error) {
       toast({
         title: "Error",
@@ -49,165 +78,191 @@ const ContactSection = () => {
   };
 
   const handleResumeDownload = () => {
-    // Replace with actual resume URL
-    window.open("#", "_blank");
+    try {
+      // Make sure you put resume.pdf in your public folder
+      const resumeUrl = '/resume.pdf';
+      const link = document.createElement('a');
+      link.href = resumeUrl;
+      link.download = 'YourName-Resume.pdf'; // Replace with your actual name
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      toast({
+        title: "Download started",
+        description: "Resume is being downloaded.",
+      });
+    } catch (error) {
+      // Fallback: open in new tab if download fails
+      window.open('/resume.pdf', '_blank');
+      toast({
+        title: "Resume opened",
+        description: "Right-click and 'Save As' to download.",
+      });
+    }
   };
 
   const handleCalendlyOpen = () => {
-    // Replace with actual Calendly URL
-    window.open("https://calendly.com/your-username", "_blank");
+    // Replace with your actual Calendly URL
+    const calendlyUrl = "https://calendly.com/fjwolfe";
+    window.open(calendlyUrl, "_blank");
+
+    toast({
+      title: "Opening Calendly",
+      description: "Schedule a time that works for you!",
+    });
   };
 
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Let's Connect
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to collaborate on your next XR project or discuss opportunities? 
-            I'd love to hear from you.
-          </p>
-        </div>
+      <section id="contact" className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          
-          {/* Quick Actions */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Quick Actions</h3>
-              
-              <div className="space-y-4">
-                <Button 
-                  onClick={handleResumeDownload}
-                  className="btn-hero w-full group"
-                  size="lg"
-                >
-                  <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                  Download Resume
-                </Button>
-                
-                <Button 
-                  onClick={handleCalendlyOpen}
-                  variant="outline"
-                  className="btn-hero-secondary w-full group"
-                  size="lg"
-                >
-                  <Calendar className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Schedule Coffee Chat
-                </Button>
-              </div>
-            </div>
-
-            {/* Contact Info */}
-            <div className="card-tech p-6">
-              <h4 className="text-lg font-semibold mb-4 flex items-center">
-                <Mail className="mr-2 h-5 w-5 text-primary" />
-                Direct Contact
-              </h4>
-              <p className="text-muted-foreground">
-                Prefer email? Reach out directly at:
-              </p>
-              <a 
-                href="mailto:your.email@example.com" 
-                className="text-primary hover:text-primary-glow transition-colors font-medium"
-              >
-                your.email@example.com
-              </a>
-            </div>
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Let's Connect!
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Ready to collaborate on your next XR project or discuss opportunities?
+              Would love to hear from you!
+            </p>
           </div>
 
-          {/* Contact Form */}
-          <div className="card-tech p-8">
-            <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-muted border-border focus:border-primary"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-muted border-border focus:border-primary"
-                  />
+          <div className="grid lg:grid-cols-2 gap-12">
+
+            {/* Quick Actions */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Quick Actions</h3>
+
+                <div className="space-y-4">
+                  <Button
+                      onClick={handleResumeDownload}
+                      className="btn-hero w-full group"
+                      size="lg"
+                  >
+                    <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+                    Download Resume
+                  </Button>
+
+                  <Button
+                      onClick={handleCalendlyOpen}
+                      variant="outline"
+                      className="btn-hero-secondary w-full group"
+                      size="lg"
+                  >
+                    <Calendar className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    Schedule Coffee Chat
+                  </Button>
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  Subject
-                </label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-muted border-border focus:border-primary"
-                />
+              {/* Contact Info */}
+              <div className="card-tech p-6">
+                <h4 className="text-lg font-semibold mb-4 flex items-center">
+                  <Mail className="mr-2 h-5 w-5 text-primary" />
+                  Direct Contact
+                </h4>
+                <p className="text-muted-foreground">
+                  Prefer email? Reach out directly at:
+                </p>
+                <a
+                    href="mailto:fjwolfe@hotmail.com"
+                    className="text-primary hover:text-primary-glow transition-colors font-medium"
+                >
+                  fjwolfe@hotmail.com
+                </a>
               </div>
+            </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={5}
-                  className="bg-muted border-border focus:border-primary resize-none"
-                  placeholder="Tell me about your project or what you'd like to discuss..."
-                />
-              </div>
+            {/* Contact Form */}
+            <div className="card-tech p-8">
+              <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="btn-hero w-full group"
-                size="lg"
-              >
-                {isSubmitting ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    Send Message
-                  </>
-                )}
-              </Button>
-            </form>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                      Name
+                    </label>
+                    <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="bg-muted border-border focus:border-primary"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                      Email
+                    </label>
+                    <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="bg-muted border-border focus:border-primary"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                    Subject
+                  </label>
+                  <Input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                      className="bg-muted border-border focus:border-primary"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    Message
+                  </label>
+                  <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={5}
+                      className="bg-muted border-border focus:border-primary resize-none"
+                      placeholder="Tell me about your project or what you'd like to discuss..."
+                  />
+                </div>
+
+                <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-hero w-full group"
+                    size="lg"
+                >
+                  {isSubmitting ? (
+                      "Sending..."
+                  ) : (
+                      <>
+                        <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                        Send Message
+                      </>
+                  )}
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 
