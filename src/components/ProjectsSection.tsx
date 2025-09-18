@@ -21,11 +21,11 @@ const ProjectsSection = () => {
     },
     {
       id: 3,
-      title: "Paws Up! XR",
-      image: "/src/assets/PawsUpXRGif.gif",
-      techStack: ["HoloLens", "MRTK", "Unity", "Azure"],
-      summary: "Take a virtual tour of FIU campus by stepping inside an XR diorama map, transporting yourself inside and get a 360 view of campus buildings and landmarks.",
-      githubUrl: "https://github.com/yourusername/mr-workspace"
+      title: "GreenifyMe",
+      image: "/src/assets/GreenifyMeGifTest.gif",
+      techStack: ["Python", "OpenAI API", "FastAPI", "React"],
+      summary: "Second Place AI Hackathon Winner! Image-to-image generative AI to showcase ways to add greenery in user environments, with a Flask extension for climate data visualization and urban heat reduction planning.",
+      githubUrl: "https://github.com/yourusername/ai-assistant"
     },
     {
       id: 4,
@@ -37,11 +37,11 @@ const ProjectsSection = () => {
     },
     {
       id: 5,
-      title: "GreenifyMe",
-      image: "/src/assets/GreenifyMeGifTest.gif",
-      techStack: ["Python", "OpenAI API", "FastAPI", "React"],
-      summary: "Developed an image-to-image generative AI using Stable Diffusion to visualize greenery additions in user environments, built with Python, and Flask, for climate visualization and urban heat reduction planning.",
-      githubUrl: "https://github.com/yourusername/ai-assistant"
+          title: "Paws Up! XR",
+        image: "/src/assets/PawsUpXRGif.gif",
+        techStack: ["HoloLens", "MRTK", "Unity", "Azure"],
+        summary: "Take a virtual tour of FIU campus by stepping inside an XR diorama map, transporting yourself inside and get a 360 view of campus buildings and landmarks.",
+        githubUrl: "https://github.com/yourusername/mr-workspace"
     },
     {
       id: 6,
