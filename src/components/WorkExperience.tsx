@@ -19,6 +19,20 @@ const WorkExperience = () => {
       skills: ["Swift", "Apple Vision Pro", "Xcode", "CreateML", "Machine Learning", "Blender"],
       images: [disneyWork1, disneyWork2]
     },
+      {
+          title: "XR Professional Certification", // Different title for variety
+          company: "XR Bootcamp",
+          duration: "03/2025 – 07/2025",
+          description: "Intensive professional training focused on industry-standard XR development workflows and rapid prototyping methodologies." +
+              " Developed expertise in transforming conceptual ideas into demo-ready MVPs using cutting-edge immersive technologies.",
+          achievements: [
+              "Cemented proficiency with modern XR development frameworks and scrum/agile pipelines",
+              "Developed rapid prototyping workflows for accelerated XR development cycles",
+              "Refined professional skills in Unity Meta SDK integration for Quest and mixed reality applications"
+          ],
+          skills: ["C#", "Unity","Meta SDK", "VR/XR Development", "Prototyping"],
+          images: ["/assets/XRBootcamp1.png", "/assets/XRBootcamp2.png"] // ✅ Reversed order for variety
+      },
     {
       title: "Private STEM Tutor",
       company: "Zero Limit Learning",
