@@ -31,7 +31,7 @@ const WorkExperience = () => {
               "Refined professional skills in Unity Meta SDK integration for Quest and mixed reality applications"
           ],
           skills: ["C#", "Unity","Meta SDK", "VR/XR Development", "Prototyping"],
-          images: ["/assets/XRBootcamp1.png", "/assets/XRBootcamp2.png"] // ✅ Reversed order for variety
+          images: ["assets/XRBootcamp1.png", "assets/XRBootcamp2.png"] // ✅ Reversed order for variety
       },
     {
       title: "Private STEM Tutor",

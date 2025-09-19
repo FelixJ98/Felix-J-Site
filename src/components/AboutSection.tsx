@@ -59,7 +59,7 @@ const AboutSection = () => {
                     >
                         {/* Profile Image */}
                         <img
-                            src="/assets/linkedinprofile.jpg"
+                            src="assets/linkedinprofile.jpg"
                             alt="Felix Jarquin"
                             className="w-full h-full object-cover rounded-lg"
                         />
