@@ -5,7 +5,7 @@ import heroBg from "../../public/assets/valeriia-neganova.jpg";
 const HeroSection = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/FelixJ-Resume.pdf';
+    link.href = 'FelixJ-Resume.pdf';
     link.download = 'FelixJ-Resume.pdf';
     document.body.appendChild(link);
     link.click();
