@@ -1,7 +1,7 @@
-import disneyWork1 from "@/assets/disney-work-1.jpg";
-import disneyWork2 from "@/assets/disney-work-2.jpg";
-import tutorWork1 from "@/assets/tutor-work-1.jpg";
-import tutorWork2 from "@/assets/tutor-work-2.jpg";
+import disneyWork1 from "@/assets/WorkPic1.jpg";
+import disneyWork2 from "@/assets/WorkPic2.jpg";
+import tutorWork1 from "@/assets/Zero3.png";
+import tutorWork2 from "@/assets/ZeroLimit2.png";
 
 const WorkExperience = () => {
   const experiences = [
@@ -16,7 +16,7 @@ const WorkExperience = () => {
         "Outlined potential for future XR commercial content development",
         "Collaborated within Scrum framework meeting weekly sprint deadlines"
       ],
-      skills: ["Swift", "Apple Vision Pro", "CreateML", "XR Development", "Scrum"],
+      skills: ["Swift", "Apple Vision Pro", "Xcode", "CreateML", "Machine Learning", "Blender"],
       images: [disneyWork1, disneyWork2]
     },
     {
@@ -45,7 +45,7 @@ const WorkExperience = () => {
             Work Experience
           </h2>
           <p className="text-xl text-muted-foreground">
-            Building immersive experiences and educational solutions
+            Work history showcasing growth, skills, and achievements.
           </p>
         </div>
 

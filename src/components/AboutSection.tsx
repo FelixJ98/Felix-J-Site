@@ -1,153 +1,136 @@
-import { Github, Linkedin, Trophy } from "lucide-react";
-import { useEffect, useState } from "react";
-import profilePic from "@/assets/profile-pic.jpg";
+import { Github, Linkedin, Trophy, User } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const AboutSection = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const profileRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-      
-      // Check if about section is in view
-      const aboutElement = document.getElementById('about');
-      if (aboutElement) {
-        const rect = aboutElement.getBoundingClientRect();
-        const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-        setIsVisible(isInView);
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsVisible(entry.isIntersecting);
+        },
+        { threshold: 0.1 }
+    );
+
+    if (profileRef.current) {
+      observer.observe(profileRef.current);
+    }
+
+    return () => {
+      if (profileRef.current) {
+        observer.unobserve(profileRef.current);
       }
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const slideProgress = Math.min(Math.max((scrollY - 300) / 400, 0), 1);
   const socialLinks = [
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/FelixJ98",
       description: "Code repositories"
     },
     {
-      name: "LinkedIn", 
+      name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/felixjarquin",
       description: "Professional network"
     },
     {
       name: "Devpost",
       icon: Trophy,
-      url: "https://devpost.com/yourusername", 
+      url: "https://devpost.com/fjwolfe?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav",
       description: "Hackathon projects"
     }
   ];
 
   return (
-    <section id="about" className="py-20 px-4 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center justify-center">
-          
-          {/* Left: About Me Cube */}
-          <div className="relative">
-            <div className="card-tech p-8">
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-primary">About Me</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    I'm a passionate Computer Science student specializing in Extended Reality (XR) 
-                    and immersive technologies. My journey spans across VR/AR development, 
-                    software engineering, and game design.
-                  </p>
-                  <p>
-                    With hands-on experience in Unity, Unreal Engine, and cutting-edge XR frameworks, 
-                    I love creating digital experiences that blur the line between reality and imagination.
-                  </p>
-                  <p>
-                    When I'm not coding, you'll find me exploring the latest in spatial computing, 
-                    participating in hackathons, or collaborating on open-source projects.
-                  </p>
-                </div>
-                
-                {/* Skills */}
-                <div className="space-y-3">
-                  <h3 className="text-lg font-semibold text-foreground">Core Technologies</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["Unity", "Unreal Engine", "C#", "C++", "React", "TypeScript", "OpenXR"].map((tech) => (
-                      <span key={tech} className="tech-badge">
+      <section id="about" className="py-20 px-4 mb-30">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center space-y-12">
+
+            {/* Profile Picture */}
+            <div
+                ref={profileRef}
+                className={`card-tech p-4 w-64 h-64 flex items-center justify-center transition-opacity duration-1000 ${
+                    isVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+            >
+              {/* Profile Image */}
+              <img
+                  src="/src/assets/linkedinprofile.jpg"
+                  alt="Felix Jarquin"
+                  className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+
+            {/* Social Links - Horizontal */}
+            <div className="flex gap-6">
+              {socialLinks.map((social) => (
+                  <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="card-tech p-4 w-56 block group hover:scale-105 transition-all duration-300"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-primary/20 p-2 rounded-lg group-hover:bg-primary/30 transition-colors">
+                        <social.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm">
+                          {social.name}
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          {social.description}
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+              ))}
+            </div>
+
+            {/* About Me */}
+            <div className="relative w-full max-w-4xl">
+              <div className="card-tech p-8">
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-bold text-primary">About Me</h2>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>
+                      I'm a passionate Computer Science graduate with a strong passion for XR, VR, and immersive technologies.
+                    </p>
+                    <p>
+                      What motivates me is being able to experiment and research new ways to interact with technology,
+                      always pushing toward creating something genuinely unique.
+                      I've worked as a software engineer and STEM tutor, and have received professional training in developing polished,
+                      MVP ready XR and VR demos.
+                    </p>
+                    <p>
+                      I'm actively involved in the tech community through hackathons and computer science organizations like INIT FIU,
+                      where I collaborate with other developers on innovative projects through the INIT Build program.
+                      I thrive in research and development environments where we can push boundaries and explore what's next in spatial computing.
+                    </p>
+                  </div>
+
+                  {/* Skills */}
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold text-foreground">Core Technologies</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {["XR/VR", "Unity", "Unreal Engine", "C#", "C++", "Swift", "Python", "JavaScript", "Machine Learning", "Stable Diffusion","Web Development"].map((tech) => (
+                          <span key={tech} className="tech-badge">
                         {tech}
                       </span>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Right: Profile Picture Square with Sliding Rectangles */}
-          <div className="relative aspect-square max-w-80 mx-auto">
-            {/* Background sliding rectangles */}
-            <div className="absolute inset-0 overflow-hidden rounded-lg">
-              {/* Top sliding rectangle */}
-              <div 
-                className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm transition-all duration-1000 ease-out"
-                style={{
-                  transform: `translateY(${-100 + (slideProgress * 100)}%)`,
-                  opacity: isVisible ? 1 : 0
-                }}
-              />
-              
-              {/* Bottom sliding rectangle */}
-              <div 
-                className="absolute inset-0 bg-gradient-to-tl from-accent/20 to-accent/5 backdrop-blur-sm transition-all duration-1000 ease-out"
-                style={{
-                  transform: `translateY(${100 - (slideProgress * 100)}%)`,
-                  opacity: isVisible ? 1 : 0
-                }}
-              />
-            </div>
-
-            {/* Profile content that reveals */}
-            <div 
-              className="relative z-10 h-full flex flex-col items-center justify-center transition-all duration-1000 ease-out"
-              style={{
-                opacity: slideProgress,
-                transform: `scale(${0.8 + (slideProgress * 0.2)})`
-              }}
-            >
-              <div className="card-tech p-8 w-full h-full flex flex-col justify-between">
-                {/* Profile Image */}
-                <div className="flex-1 flex items-center justify-center">
-                  <img 
-                    src={profilePic}
-                    alt="Profile"
-                    className="w-48 h-48 rounded-lg object-cover"
-                  />
-                </div>
-
-                {/* Social Links as Icon Buttons */}
-                <div className="flex justify-center space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-primary/20 hover:bg-primary/30 p-3 rounded-lg transition-all duration-300 hover:scale-110 group"
-                      title={social.description}
-                    >
-                      <social.icon className="h-5 w-5 text-primary group-hover:text-primary" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 
