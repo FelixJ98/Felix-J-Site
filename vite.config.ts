@@ -20,5 +20,5 @@ export default defineConfig(({ mode }) => ({
     },
       base: '/Felix-J-Site/'
   },
-    
+
 }));
