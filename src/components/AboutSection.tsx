@@ -1,5 +1,6 @@
 import { Github, Linkedin, Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
+import profilePic from "@/assets/profile-pic.jpg";
 
 const AboutSection = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -120,7 +121,7 @@ const AboutSection = () => {
                 {/* Profile Image */}
                 <div className="flex-1 flex items-center justify-center">
                   <img 
-                    src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&crop=face"
+                    src={profilePic}
                     alt="Profile"
                     className="w-48 h-48 rounded-lg object-cover"
                   />
