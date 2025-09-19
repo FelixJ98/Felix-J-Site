@@ -129,7 +129,7 @@ const AboutSection = () => {
                                 <h2 className="text-2xl md:text-3xl font-bold text-primary">About Me</h2>
                                 <div className="space-y-3 md:space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
                                     <p>
-                                        I'm a passionate Computer Science graduate with a strong passion for XR, VR, and immersive technologies.
+                                        I'm a passionate Computer Science graduate with a specialty in XR, VR, and immersive technologies.
                                     </p>
                                     <p>
                                         What motivates me is being able to experiment and research new ways to interact with technology,
