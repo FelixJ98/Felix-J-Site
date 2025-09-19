@@ -1,6 +1,6 @@
 import { ChevronDown, Download, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/valeriia-neganova.jpg";
+import heroBg from "../../public/assets/valeriia-neganova.jpg";
 
 const HeroSection = () => {
   const handleResumeDownload = () => {

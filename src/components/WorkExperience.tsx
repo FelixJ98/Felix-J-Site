@@ -1,7 +1,7 @@
-import disneyWork1 from "@/assets/WorkPic1.jpg";
-import disneyWork2 from "@/assets/WorkPic2.jpg";
-import tutorWork1 from "@/assets/Zero3.png";
-import tutorWork2 from "@/assets/ZeroLimit2.png";
+import disneyWork1 from "../../public/assets/WorkPic1.jpg";
+import disneyWork2 from "../../public/assets/WorkPic2.jpg";
+import tutorWork1 from "../../public/assets/Zero3.png";
+import tutorWork2 from "../../public/assets/ZeroLimit2.png";
 
 const WorkExperience = () => {
   const experiences = [
