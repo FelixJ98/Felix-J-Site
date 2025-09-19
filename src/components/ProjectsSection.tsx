@@ -10,7 +10,7 @@ const ProjectsSection = () => {
       id: 1,
       title: "Re-TXR",
       staticImage: "/src/assets/ReTextStatic.png", // Static version
-      gifImage: "/src/assets/RETXTRExample.gif", // Animated version
+      gifImage: "/assets/RETXTRExample.gif", // Animated version
       techStack: ["XR", "C#", "Unity", "AI SD", "Meta SDK"],
       summary: "XR app that would let you experiment new textures in realtime, use voice prompt to generate a new texture using stable diffusion",
       githubUrl: "https://github.com/FelixJ98/XRTXTR"
