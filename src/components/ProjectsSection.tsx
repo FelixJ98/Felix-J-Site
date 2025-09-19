@@ -6,6 +6,7 @@ import GreenifyMeGifTest from "@/assets/GreenifyMeGifTest.gif";
 import CatraxGifTest from "@/assets/CatraxGifTest.gif";
 import PawsUpXRGif from "@/assets/PawsUpXRGif.gif";
 import EsperantoXRGIF from "@/assets/EsperantoXRGIF.gif";
+import frightLightProject from "@/assets/fright-light-project.jpg";
 
 const ProjectsSection = () => {
   const mediaRefs = useRef<{ [key: number]: HTMLImageElement }>({});
@@ -77,7 +78,7 @@ const ProjectsSection = () => {
     {
       id: 6,
       title: "Fright Light",
-      staticImage: "/src/assets/cloud-manager-project.jpg",
+      staticImage: frightLightProject,
       gifImage: null,
       useHoverGif: false,
       techStack: ["Unreal 4", "Blender"],
