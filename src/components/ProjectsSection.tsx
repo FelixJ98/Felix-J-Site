@@ -18,8 +18,8 @@ const ProjectsSection = () => {
     {
       id: 2,
       title: "Cozy Desk XR",
-      staticImage: "/assets/CozyDeskStatic.PNG",
-      gifImage: "/assets/CozyDeskTestGif.gif",
+      staticImage: "assets/CozyDeskStatic.PNG",
+      gifImage: "assets/CozyDeskTestGif.gif",
       techStack: ["XR", "C#", "Unity", "Meta MRUK"],
       summary: "An XR productivity app where sustained focus cultivates an evolving mixed reality village while you craft your perfect cozy workspace environment.",
       githubUrl: "https://github.com/FelixJ98/CozyDeskMVP"
@@ -27,8 +27,8 @@ const ProjectsSection = () => {
     {
       id: 3,
       title: "GreenifyMe",
-      staticImage: "/assets/GreenifyMeStatic.PNG",
-      gifImage: "/assets/GreenifyMeGifTest.gif",
+      staticImage: "assets/GreenifyMeStatic.PNG",
+      gifImage: "assets/GreenifyMeGifTest.gif",
       techStack: ["Python","Flask", "AI SD", "ML", "React"],
       summary: "Second Place AI Hackathon Winner! Image-to-image generative AI to showcase ways to add greenery in user environments, with a Flask extension for climate data visualization and urban heat reduction planning.",
       githubUrl: "https://devpost.com/software/greenifyme-o1ceuz"
@@ -36,8 +36,8 @@ const ProjectsSection = () => {
     {
       id: 4,
       title: "CatTrax",
-      staticImage: "/assets/CatraxStatic.PNG",
-      gifImage: "/assets/CatraxGifTest.gif",
+      staticImage: "assets/CatraxStatic.PNG",
+      gifImage: "assets/CatraxGifTest.gif",
       techStack: ["VR", "C#", "Unity", "Blender"],
       summary: "A VR game featuring top-down train control where players strategically manipulate track switches, clear path obstacles, and interact with dynamic railway elements to guide their cat conductor safely through challenging terrain and hazardous routes.",
       githubUrl: "https://github.com/INIT-BUILD-VR-2022/CatConductor-VR"
@@ -45,8 +45,8 @@ const ProjectsSection = () => {
     {
       id: 5,
       title: "Paws Up! XR",
-      staticImage: "/assets/PawsUPStatic.PNG",
-      gifImage: "/assets/PawsUpXRGif.gif",
+      staticImage: "assets/PawsUPStatic.PNG",
+      gifImage: "assets/PawsUpXRGif.gif",
       techStack: ["XR", "C#", "Unity", "Gaussian Splats", "PhotoSpheres"],
       summary: "Take a virtual tour of FIU campus by stepping inside an XR diorama map, transporting yourself inside and get a 360 view of campus buildings and landmarks.",
       githubUrl: "https://github.com/FelixJ98/PawsUp"
@@ -54,8 +54,8 @@ const ProjectsSection = () => {
     {
       id: 6,
       title: "Fright Light",
-      staticImage: "/assets/FrightLightStatic.PNG",
-      gifImage: "/assets/FrightLightGif.gif",
+      staticImage: "assets/FrightLightStatic.PNG",
+      gifImage: "assets/FrightLightGif.gif",
       techStack: ["VR","Unreal 5", "Blender"],
       summary: "VR asymmetrical multiplayer Party Game using Unreal engine with one main VR player playing against 4 other players on via PC couch co-op",
       githubUrl: "https://github.com/CrisBlu/Fright-Light"
@@ -63,8 +63,8 @@ const ProjectsSection = () => {
     {
       id: 7,
       title: "Esperanto XR",
-      staticImage: "/assets/EsperantoStatic.PNG",
-      gifImage: "/assets/EsperantoXRGIF.gif",
+      staticImage: "assets/EsperantoStatic.PNG",
+      gifImage: "assets/EsperantoXRGIF.gif",
       techStack: ["C#", "Unity", "Normcore", "Meta SDK"],
       summary: "MIT Reality Hacks project, a social VR language translation app where users can read real time captions, and have them translated live underneath other users in mixed reality.",
       githubUrl: "https://devpost.com/software/esperanto-xr"
