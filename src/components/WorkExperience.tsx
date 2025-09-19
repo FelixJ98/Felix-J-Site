@@ -126,10 +126,6 @@ const WorkExperience = () => {
                     </div>
                   </div>
                 ))}
-                
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary/20 rounded-full blur-lg"></div>
               </div>
             </div>
           ))}
