@@ -33,6 +33,7 @@ const HeroSection = () => {
       }}
     >
       {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
       <div className="relative z-10 text-center space-y-8 px-4">
         {/* Name */}
         <div className="space-y-4">
