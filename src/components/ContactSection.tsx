@@ -83,7 +83,7 @@ const ContactSection = () => {
       const resumeUrl = 'FelixJ-Resume.pdf';
       const link = document.createElement('a');
       link.href = resumeUrl;
-      link.download = 'FelixJ-Resume.pdf'; // Replace with your actual name
+      link.download = 'FelixJ-Resume.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
