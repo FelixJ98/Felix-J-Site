@@ -164,13 +164,13 @@ const ContactSection = () => {
                   Direct Contact
                 </h4>
                 <p className="text-muted-foreground">
-                  Prefer email? Reach out directly at:
+                  Prefer email? Reach out directly:
                 </p>
                 <a
                     href="mailto:fjwolfe@hotmail.com"
                     className="text-primary hover:text-primary-glow transition-colors font-medium"
                 >
-                  fjwolfe@hotmail.com
+                  Send an Email
                 </a>
               </div>
             </div>
